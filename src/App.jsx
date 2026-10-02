@@ -1276,7 +1276,13 @@ function Footer() {
               <a href="tel:+17192135621">+1 (719) 213-5621</a>
             </li>
             <li>
-              <a href="#">LinkedIn ↗</a>
+              <a
+                href="https://linkedin.com/in/terrence-whaley"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn ↗
+              </a>
             </li>
           </ul>
         </div>
