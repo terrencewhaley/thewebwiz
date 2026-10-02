@@ -9,7 +9,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
 }; /*EDITMODE-END*/
 
 const NAV = [
-  { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
   { label: "Pricing", href: "#pricing" },
@@ -159,11 +158,15 @@ const FAQ = [
   },
   {
     q: "Can I see real performance scores?",
-    a: "Every site we've shipped in the last 18 months scores 95+ on Lighthouse mobile. Most score perfect 100s. We'll show you the live PageSpeed reports for any portfolio site before we start.",
+    a: "Every site we build is engineered for a 95+ Lighthouse mobile score before launch, with most landing at a perfect 100. We'll show you the live PageSpeed report for your own site before we hand it off.",
   },
   {
     q: "Do you take equity or revenue share?",
     a: "No. We work flat-rate or monthly. Aligned incentives are good — but we keep the engagement clean so we can focus on shipping the best site we know how.",
+  },
+  {
+    q: "What can AI actually do for my business?",
+    a: "A chatbot on your site that answers common questions and books appointments 24/7, even when you're closed. Automated follow-up that texts or emails a lead the moment they fill out a form, instead of hours later. And simple automations for intake forms and admin work that save your team real time every week. We'll help you figure out which of these is worth it for your business before we build anything.",
   },
 ];
 
@@ -418,9 +421,9 @@ function Hero() {
           <b>EST.</b> &nbsp;Independent studio · Los Angeles, CA
         </span>
         <span>
-          <b>CLIENTS</b> &nbsp;US & Canada · 60+ shipped
+          <b>CLIENTS</b> &nbsp;US & Canada
         </span>
-        <span style={{ color: "var(--accent)" }}>● Booking Q3 2026</span>
+        <span style={{ color: "var(--accent)" }}>● Booking Q1 2027</span>
       </div>
       <Reveal as="h1" className="display">
         Websites and AI
@@ -442,8 +445,8 @@ function Hero() {
           <a href="#contact" className="btn-primary">
             Start a project <span className="btn-arrow">→</span>
           </a>
-          <a href="#work" className="btn-ghost">
-            See the work
+          <a href="#services" className="btn-ghost">
+            See what we do
           </a>
         </div>
       </div>
@@ -603,8 +606,8 @@ function Offer() {
             <div>
               <h5>Real human support</h5>
               <p>
-                You text the studio lead directly. No ticket portal, no chatbot,
-                no offshore call center. Same-day responses, every day.
+                You text the studio lead directly. No ticket portal, no
+                offshore call center. Same-day responses, every day.
               </p>
             </div>
             <div>
@@ -635,12 +638,11 @@ function Portfolio() {
         </div>
         <div>
           <h2 className="section-title">
-            Sixty-plus sites — <em>across every industry you can think of.</em>
+            Built for <em>every industry you can think of.</em>
           </h2>
           <p className="section-lede">
             Home services, restaurants, consulting, healthcare, retail,
-            accounting. Real businesses with real customers. Six recent examples
-            below.
+            accounting. Real businesses with real customers.
           </p>
         </div>
       </div>
@@ -699,7 +701,7 @@ function Performance() {
     <section className="section" id="performance">
       <div className="section-head">
         <div className="section-eyebrow">
-          <span className="num">[05]</span> Performance
+          <span className="num">[04]</span> Performance
         </div>
         <div>
           <h2 className="section-title">
@@ -726,13 +728,6 @@ function Performance() {
                 <Counter to={100} />
               </div>
               <div className="stat-label mono">PageSpeed scores</div>
-            </div>
-            <div className="stat">
-              <div className="stat-num">
-                <Counter to={62} />
-                <span className="unit">+</span>
-              </div>
-              <div className="stat-label mono">Sites shipped</div>
             </div>
           </div>
           <p
@@ -904,7 +899,7 @@ function Pricing() {
     <section className="section" id="pricing">
       <div className="section-head">
         <div className="section-eyebrow">
-          <span className="num">[06]</span> Pricing
+          <span className="num">[05]</span> Pricing
         </div>
         <div>
           <h2 className="section-title">
@@ -1023,7 +1018,7 @@ function FaqSection() {
       <div className="faq">
         <div>
           <div className="section-eyebrow" style={{ marginBottom: 24 }}>
-            <span className="num">[08]</span> FAQ
+            <span className="num">[06]</span> FAQ
           </div>
           <h2 className="section-title">
             Common <em>questions.</em>
@@ -1119,7 +1114,7 @@ function Contact() {
           </div>
           <div className="item">
             <span className="mono">Booking</span>
-            <b>Q3 2026 · 2 slots open</b>
+            <b>Q1 2027 · 2 slots open</b>
           </div>
         </div>
       </div>
@@ -1210,9 +1205,6 @@ function Footer() {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#work">Work</a>
-            </li>
-            <li>
               <a href="#approach">Approach</a>
             </li>
             <li>
@@ -1248,9 +1240,6 @@ function Footer() {
             </li>
             <li>
               <a href="#">LinkedIn ↗</a>
-            </li>
-            <li>
-              <a href="#">Are.na ↗</a>
             </li>
           </ul>
         </div>
@@ -1317,10 +1306,10 @@ function App() {
       <WhatWeDo />
       <Services />
       <Offer />
-      <Portfolio />
+      {/* Portfolio hidden until we have real shipped sites to show */}
       <Performance />
       <Pricing />
-      <Quotes />
+      {/* Quotes hidden until we have real client testimonials */}
       <FaqSection />
       <Contact />
       <Footer />
