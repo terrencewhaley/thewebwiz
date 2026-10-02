@@ -1069,8 +1069,9 @@ function Contact() {
   });
   const [errs, setErrs] = useState({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const set = (k, v) => setVals({ ...vals, [k]: v });
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const ne = {};
     if (!vals.name.trim()) ne.name = "required";
@@ -1078,7 +1079,23 @@ function Contact() {
     if (!vals.msg.trim() || vals.msg.length < 10)
       ne.msg = "tell us a bit more (10+ chars)";
     setErrs(ne);
-    if (Object.keys(ne).length === 0) setSent(true);
+    if (Object.keys(ne).length > 0) return;
+    setSending(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xppwgndj", {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(vals),
+      });
+      if (!res.ok) throw new Error("submit failed");
+      setSent(true);
+    } catch {
+      setErrs({
+        form: "Something went wrong — email us directly at hello@thewebwiz.us.",
+      });
+    } finally {
+      setSending(false);
+    }
   };
   if (sent) {
     return (
@@ -1089,8 +1106,7 @@ function Contact() {
           </h2>
           <p>
             Your message is in. Expect a reply from the studio within a few
-            hours, often less. In the meantime, browse the work or come back and
-            tweak the design above.
+            hours, often less.
           </p>
         </div>
         <div className="form-success">
@@ -1181,12 +1197,23 @@ function Contact() {
           ></textarea>
           {errs.msg && <span className="field-err">— {errs.msg}</span>}
         </div>
+        {errs.form && (
+          <div className="field error">
+            <span className="field-err">— {errs.form}</span>
+          </div>
+        )}
         <div className="form-foot">
           <span className="mono" style={{ color: "var(--ink-3)" }}>
             We reply same day.
           </span>
-          <button type="submit" className="btn-primary" style={{ border: 0 }}>
-            Send inquiry <span className="btn-arrow">→</span>
+          <button
+            type="submit"
+            className="btn-primary"
+            style={{ border: 0 }}
+            disabled={sending}
+          >
+            {sending ? "Sending…" : "Send inquiry"}{" "}
+            <span className="btn-arrow">→</span>
           </button>
         </div>
       </form>
