@@ -404,7 +404,12 @@ function Nav() {
             </a>
           ))}
         </div>
-        <a href="#contact" className="nav-cta">
+        <a
+          href="https://calendly.com/terrencewhaley"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-cta"
+        >
           <span className="dot" />
           Start a project
         </a>
@@ -442,7 +447,12 @@ function Hero() {
           busywork.
         </p>
         <div className="hero-actions">
-          <a href="#contact" className="btn-primary">
+          <a
+            href="https://calendly.com/terrencewhaley"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
             Start a project <span className="btn-arrow">→</span>
           </a>
           <a href="#services" className="btn-ghost">
