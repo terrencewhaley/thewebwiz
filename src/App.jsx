@@ -395,7 +395,7 @@ function Nav() {
       <div className="nav-inner">
         <a href="#" className="brand">
           <span className="brand-mark">/</span>
-          <span>thewebwiz</span>
+          <span>the web wiz</span>
         </a>
         <div className="nav-links">
           {NAV.map((n) => (
@@ -441,7 +441,7 @@ function Hero() {
       </Reveal>
       <div className="hero-sub">
         <p>
-          TheWebWiz is a Los Angeles studio building websites, online stores,
+          The Web Wiz is a Los Angeles studio building websites, online stores,
           and AI tools for small businesses in the US and Canada. Fast sites
           that rank and convert, plus chatbots and automations that handle the
           busywork.
@@ -580,7 +580,7 @@ function Offer() {
         <div className="portrait">
           <div className="portrait-card">
             <b>Studio Lead</b>
-            <span>thewebwiz</span>
+            <span>the web wiz</span>
           </div>
         </div>
         <div>
@@ -616,8 +616,8 @@ function Offer() {
             <div>
               <h5>Real human support</h5>
               <p>
-                You text the studio lead directly. No ticket portal, no
-                offshore call center. Same-day responses, every day.
+                You text the studio lead directly. No ticket portal, no offshore
+                call center. Same-day responses, every day.
               </p>
             </div>
             <div>
@@ -1084,7 +1084,10 @@ function Contact() {
     try {
       const res = await fetch("https://formspree.io/f/xppwgndj", {
         method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(vals),
       });
       if (!res.ok) throw new Error("submit failed");
@@ -1228,7 +1231,7 @@ function Footer() {
         <div className="col-brand">
           <a href="#" className="brand">
             <span className="brand-mark">/</span>
-            <span>thewebwiz</span>
+            <span>the web wiz</span>
           </a>
           <p>
             An independent studio in Los Angeles building websites and AI tools
@@ -1288,7 +1291,8 @@ function Footer() {
         </div>
       </footer>
       <div className="foot-bottom">
-        <span>© 2026 TheWebWiz Studio</span>
+        <span>© 2026 The Web Wiz Studio</span>
+        <a href="/privacy.html">Privacy Policy</a>
         <span>Built in Los Angeles, CA</span>
       </div>
     </>
