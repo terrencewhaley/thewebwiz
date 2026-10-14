@@ -577,12 +577,14 @@ function Offer() {
         </div>
       </div>
       <div className="offer">
+        {/* Hidden until we have a real founder photo to use
         <div className="portrait">
           <div className="portrait-card">
             <b>Studio Lead</b>
             <span>the web wiz</span>
           </div>
         </div>
+        */}
         <div>
           <div className="offer-features">
             <div>
